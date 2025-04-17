@@ -21,12 +21,13 @@ public class addressBuilder {
         System.out.println("Billing zip: ");
         String billingZip = scanner.nextLine();
 
-        String fullAddress = addressBuilder(fullName, billingStreet, billingCity, billingState, billingZip);
+        String fullAddress = buildAddress(fullName, billingStreet, billingCity, billingState, billingZip);
 
         System.out.printf("%s\n\nBilling Address: \n%s\n", fullName, fullAddress);
     }
 
-    public static String addressBuilder(String name, String street, String city, String state, String zip){
+    @SuppressWarnings("StringBufferReplaceableByString")
+    public static String buildAddress(String name, String street, String city, String state, String zip){
         StringBuilder skills = new StringBuilder();
 
         skills.append(street).append("\n");
